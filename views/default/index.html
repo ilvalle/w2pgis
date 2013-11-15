@@ -1,4 +1,4 @@
-{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{left_sidebar_enabled,right_sidebar_enabled=False,True}}
 {{extend 'layout.html'}}
 
 <div id='map' style="height: 500px;"></div>
@@ -10,8 +10,6 @@
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-
-    var polyline = L.polyline([[34,46], [36,47], [36,48]], {color: 'red'}).addTo(map);
 
     $(document).on('click', '#add', function() {
         $.getJSON('{{=URL('default', 'get_geojson')}}', function( data ) { 
