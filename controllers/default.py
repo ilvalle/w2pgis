@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from gluon.serializers import loads_json
 
-def index():
+def index(): 
+    response.files.append('http://cdn.leafletjs.com/leaflet-0.7/leaflet.js')
+    response.files.append('http://cdn.leafletjs.com/leaflet-0.7/leaflet.css')
     return {}
 
 def get_geojson():
